@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Employee Registration</title>
+  <style>
+    body{
+      text-align: center;
+      background-color: rgb(31, 31, 67);
+    }
+    h1{
+      color: silver;
+      font-size: 50px;
+    }
+    label{
+      display: inline-block;
+      width: 400px;
+      font-size: 35px;
+      color: rgb(201, 192, 192);
+    }
+    input{
+      height: 45px;
+      width: 380px;
+      border-radius: 8px;
+    }
+    button{
+      background-color: rgb(37, 139, 139);
+      width: 600px;
+      height: 60px;
+      color:black;
+      border-radius: 20px;
+      font-size: 35px;
+      
+    }
+    #str{
+      margin-top: 20px;
+      align-items: center;
+    }
+  </style>
+  <script>
+    function validate(){
+      var x = document.forms["myform"]["empname"].Value;
+      if(x === ""){
+        alert("Please Fill Employee Name");
+        return false;
+      }
+    }
+  </script>
+</head>
+<body>
+  
+  <h1>Employee Registration form</h1>
+  <div>
+  <form id="myform" action="connect.jsp" method="post" onsubmit="return validate()">
+    <label id="empname" >Employee Name</label>
+    <input name="empname" type="text" placeholder="Employee Name"/>
+    <br/><br/>
+    <label id="email" >Email ID</label>
+    <input name="email" type="email" placeholder="Email ID"/>
+    <br/><br/>
+    <label id="dob" >Date of Birth</label>
+    <input name="dob" type="date" placeholder="Date of Birth "/>
+    <br/><br/>
+    <label id="mobile" >Mobile Number</label>
+    <input name="mobile" type="phone" placeholder="Mobile Number"/>
+    <br/><br/>
+    <label id="gender" >Gender</label>
+    <input name="gender" type="text" placeholder="Gender "/>
+    <br/><br/>
+    <label id="qual" >Qualification</label>
+    <input name="qual" type="text" placeholder="Qualification "/>
+    <br/><br/>
+    <label id="exppast" >Experience in Past</label>
+    <input name="exppast" type="number" placeholder="Experience (Year) "/>
+    <br/><br/>
+    <label id="expcur" >Joining date(Current)</label>
+    <input name="expcur" type="date" placeholder="Joining Date "/>
+    <br/><br/>
+    <button type="submit">Submit</button>
+
+  </form>
+  <form method="get" action="fetch1.jsp">
+    <button id="str" >Database</button>
+  </form>
+  </div>
+  
+</body>
+</html>
